@@ -45,7 +45,7 @@ export class AppComponent implements AfterViewInit {
       environment.userToken
     );
     void this.channelService.init({
-      type: 'messaging',
+      type: { $in: ['messaging', 'team'] },
       members: { $in: [environment.userId] },
     });
     this.streamI18nService.setTranslation();
